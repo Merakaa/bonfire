@@ -6,4 +6,282 @@
 
 // Пользовательские стили
 
+.header
+    &__logo
+        margin-right: 16px
+.top-line
+    background-color: $orange
+    padding: 23px 0 
+    >div
+        display: grid
+        grid-template-columns: max-content max-content 1fr max-content
+        align-items: center 
+    &__text
+        color: #ffffff
+        text-transform: uppercase
+        display: inline-block
+        margin: 0
+        padding: 0
+        font-size: em(14px)
+        font-family: $T 
+    &__list
+        list-style: none
+        padding: 0
+        margin: 0
+        justify-self: end
+    &__item
+        display: inline-block
+         
+    &__url
+        color: #ffffff
+        text-decoration: none
+        font-family: $T
+        font-size: em(14px) 
+        margin-right: em(10px)
+        
+.cart
+    position: relative
+    &:hover .cart__text
+        display: block 
+    &__num
+        position: absolute
+        top: 0
+        right: 0
+        margin: 0
+        font-size: em(11px)
+        font-family: $MP
+        color: #ffffff
+        z-index: 1
+        &::before
+            z-index: -1
+            content: ''
+            position: absolute
+            top: 50%
+            right: 50%
+            width: 21px
+            height: 19px
+            transform: translate(50%, -50%)
+            background: url('../img/Bubble.svg') no-repeat center center
+    &__text
+        position: fixed 
+        font-family: $TDB
+        color: #fff
+        font-size: em(12px)
+        text-transform: uppercase
+        background: #7070708a
+        border-radius: 3px  
+        padding: em(20px)
+        line-height: 24px
+        margin: 0
+        display: none 
+        transform: translateX(-85%)
+        &::before
+            content: ''
+            position: absolute
+            right: 5px
+            top: -10px
+            border: 5px solid transparent
+            border-bottom: 5px solid #7070708a
+
+
+
+.nav
+    list-style: none
+    margin: 0
+    padding: 0
+    background-color: $lGrey
+    border-bottom: 1px solid #f1e9cf
+    &__item
+        display: inline-block
+        padding: 20px 10px 25px 25px 
+        position: relative
+        &:hover            
+            background: linear-gradient(0deg, #FBF2D3 0%, #F0E4B8 100%, #F0E4B8 100%), #FBF2D3;
+            .second-nav
+                display: block
+        &:first-child::before
+            content: ''
+            position: absolute
+            left: 0
+            width: 19px
+            height: 19px
+            background: url('../img/icon-home.svg') no-repeat center center
+    &__url
+        font-family: $TDB
+        text-decoration: none
+        font-size: em(16px)
+        color: $grey
+        // letter-spacing: -1.2px
+.second-nav
+    position: absolute
+    z-index: 1
+    display: none
+    list-style: none
+    padding: 0px 10px  
+    width: 100%
+    left: 0
+    bottom: 0
+    transform: translateY(100%)
+    margin: 0
+    background-color: #fbf2d3
+    &__item
+        padding-bottom: em(15px)
+
+    &__url
+        padding: em(2px) em(14px)
+        border-radius: 1000em 
+        display: block
+        text-decoration: none
+        color: $grey
+        font-size: em(14px)
+        font-family: $TDB 
+        &:hover 
+            color: #fff
+            background-color: $orange
+
+.search-line
+    background-color: #F9F9F9
+    >div
+        display: grid
+        grid-template-columns: 1fr repeat(3, max-content)
+        align-items: center
+        padding: 16px
+        #select
+            padding: em(10px) em(95px) em(10px) em(14px)
+            border-radius: 5px
+            border: none
+            box-shadow: inset 1px 1px 0px 0px rgba(0,0,0,.13)
+            font-family: $TDL
+            color: #4c4c4c
+            font-size: em(12px)
+    &__text
+        margin: 0
+        font-family: $TDB
+        font-size: em(14px) 
+        color: #a7a49c
+    &__form
+        position: relative
+        // width: 188px 
+        input
+            width: 100% 
+            padding: em(8px) em(42px) em(8px) em(14px)
+            box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.13)
+            border: none
+            border-radius: 5px
+            outline: none  
+            font-family: $TDL
+        button
+            position: absolute 
+            top: 50%
+            right: 10px 
+            border: none
+            background: none
+            transform: translateY(-50%)
+            cursor: pointer
+            background: url(../img/icon-search.png) no-repeat center center
+            width: 16px
+            height: 14px 
+    &__select
+        margin-right: 12px
+    // sprites
+.icon-1, .icon-2, .icon-3, .icon-4
+    display: inline-block
+    margin: 0 10px
+.icon-1 
+    background-image: url(../img/sprite.png)
+    background-position: -14px 0px
+    width: 11px
+    height: 10px
+.icon-2 
+  background-image: url(../img/sprite.png)
+  background-position: -25px 0px
+  width: 5px
+  height: 11px
+.icon-3 
+  background-image: url(../img/sprite.png)
+  background-position: 0px 0px
+  width: 14px
+  height: 10px
+.icon-4 
+  background-image: url(../img/sprite.png)
+  background-position: 0px -10px
+  width: 11px
+  height: 10px
+
+    // burger
+.burger-menu
+    position: relative 
+    width: 30px
+    height: 27px
+    border: none
+    background: none
+    padding: 0 
+    display: none
+    z-index: 1000
+    margin: 10px 0
+    &.active .burger-menu__line
+        background-color: transparent  
+        &::before
+                transform: rotate(45deg)  
+                top: 0
+                background-color: $grey
+        &::after
+                transform: rotate(-45deg)
+                bottom: 0
+                background-color: $grey
+    &__line
+        display: block 
+        position: absolute
+        width: 30px
+        height: 3px
+        background-color: $grey
+        top: 50%
+        transform: translateY(-50%) 
+        transition: .15s all ease
+        &::before 
+            position: absolute
+            display: block
+            content: ''
+            width: 30px
+            height: 3px
+            background-color: $grey
+            top: -10px 
+            transition: .15s all ease
+        &::after
+            position: absolute
+            display: block
+            content: ''
+            bottom: -10px
+            width: 30px
+            height: 3px
+            background-color: $grey
+            transition: .15s all ease
+// mobile-menu
+.mobile-menu
+    position: fixed
+    width: 100vw
+    height: 86vh
+    left: 0
+    right: 0
+    bottom: 0
+    top: 14vh
+    background-color: $lGrey
+    z-index: 10 
+    display: none
+    &__box
+        align-items: center
+        height: inherit
+    &__list
+        padding: 0 
+        
+    &__item 
+        list-style: none 
+        text-align: center
+        margin-bottom: em(20px) 
+    &__url
+        text-decoration: none
+        font-family: $TDB
+        color: $grey
+        font-size: em(30px)
+        font-weight: normal  
 @import "media" // Всегда в конце

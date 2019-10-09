@@ -14,16 +14,51 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+	.nav
+		display: none
+	.burger-menu
+		display: inline-block
+	.top-line
+		>div
+			grid-template-columns: 1fr 1fr
+			grid-row-gap: 20px
+		&__text
+			max-width: max-content
+			justify-self: end
+	.search-line>div 
+		grid-template-columns: repeat(4,1fr) 
+	.cart
+		justify-self: end
 	/**/
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
+	.mobile-menu
+		top: 15vh
+		height: 85vh
+		&__url
+			font-size: em(20px)
+	.search-line>div
+		grid-template-columns: 1fr 1fr
+		grid-row-gap: 20px
 	/**/
 
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
+	.mobile-menu
+		top: 33vh
+		height: 67vh 
+	.top-line
+		&__text
+			grid-column: 1/3
+			justify-self: left
+    		
+	.header__logo-url
+		grid-column: 1/3
+
+	
 	/**/
 
 
